@@ -1,3 +1,4 @@
+-- Active: 1700393509060@@127.0.0.1@3306@bookify
 drop DATABASE Bookify;
 CREATE DATABASE Bookify;
 
@@ -108,8 +109,29 @@ WHERE id = 7;
 -- ------------------------------------------------------------ delete date
 
 DELETE FROM Employes
-WHERE nom = 'said' or nom = 'samir'
+WHERE nom = 'said' or nom = 'samir';
 
+SELECT e.nom as em, s.nom, r.id
+FROM Employes e, salles s, Reservations r
+where r.salle_id = s.id and r.employes_id = e.id;
 
-SELECT *
-FROM reservations
+-- inner join
+SELECT r.id, e.nom
+FROM Employes e
+INNER JOIN Reservations r
+ON r.employes_id = e.id
+ORDER BY r.id;
+
+-- left JOIN
+SELECT r.id, e.nom
+FROM Employes e
+LEFT JOIN Reservations r
+ON r.employes_id = e.id
+ORDER BY r.id;
+
+-- RIGHT JOIN
+SELECT r.id, s.nom
+FROM Reservations r 
+RIGHT JOIN salles s
+ON r.salle_id = s.id
+ORDER BY r.id;
