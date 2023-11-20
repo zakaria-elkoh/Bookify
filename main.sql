@@ -63,8 +63,6 @@ VALUES  (1, 'pc', 1),
         (6, 'chears', 3),
         (7, 'board', 5);
 
-select *
-from Equipements;
 -- post
 INSERT INTO Post
 VALUES  (1, 'Manager'),
@@ -103,7 +101,6 @@ VALUES  (8, 'Said', 'said@gmail.com', 1, 2),
 UPDATE Employes
 SET nom = 'anas', email = 'anas@gmail.com'
 WHERE id = 7;
-
 
 
 -- ------------------------------------------------------------ delete date
